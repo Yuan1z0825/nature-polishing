@@ -55,6 +55,7 @@
 ```
 
 ## 适用场景
+<img width="1730" height="924" alt="image" src="https://github.com/user-attachments/assets/2137d663-8e8e-426c-9fa9-210302022443" />
 
 - 中文学术草稿的英文翻译与润色
 - 已有英文文本的 Nature 风格改写
