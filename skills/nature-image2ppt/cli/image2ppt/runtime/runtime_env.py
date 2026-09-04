@@ -9,9 +9,9 @@ import json
 import os
 import platform
 import shutil
-import stat
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 
@@ -99,9 +99,22 @@ def write_config_file(path: Path, values: dict) -> None:
     except ImportError as exc:
         raise SystemExit(f"PyYAML is required to write Image2PPT config. Install with {cli_reinstall_hint()}.") from exc
     data = {key: values[key] for key in ENV_FIELDS if values.get(key)}
-    fd = os.open(str(path), os.O_WRONLY | os.O_CREAT | os.O_TRUNC, stat.S_IRUSR | stat.S_IWUSR)
-    with os.fdopen(fd, "w", encoding="utf-8") as handle:
-        yaml.safe_dump(data, handle, allow_unicode=True, sort_keys=True)
+    fd, temp_name = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+    try:
+        os.chmod(temp_name, 0o600)
+        handle = os.fdopen(fd, "w", encoding="utf-8")
+        fd = -1
+        with handle:
+            yaml.safe_dump(data, handle, allow_unicode=True, sort_keys=True)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temp_name, path)
+        os.chmod(path, 0o600)
+    finally:
+        if fd >= 0:
+            os.close(fd)
+        if os.path.exists(temp_name):
+            os.unlink(temp_name)
 
 
 def mask_secret(value: str) -> str:
