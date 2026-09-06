@@ -1,13 +1,6 @@
 ---
 name: nature-reviewer
-description: >-
-  Simulate Nature-style or general pre-submission peer review from the referee perspective,
-  not an author rebuttal. Use for reviewer reports, mock peer review, manuscript critique,
-  novelty/significance/technical-soundness assessment, 审稿人视角评估, 模拟审稿, 预审,
-  投稿前自审, 审稿意见模拟, or 帮我审一下论文. Produce evidence-grounded Major Concerns,
-  Minor Comments, and blocking flags. For multiple reviewers, keep every reviewer mutually
-  blind in a separate context, freeze all reports before comparison, and create any synthesis
-  only afterward as a separate editor/author-facing artifact.
+description: "Provide evidence-grounded mock peer review of scientific manuscripts or excerpts, covering significance, validity, and major/minor concerns. Use for 模拟审稿、投稿前自审、审稿人视角评估; not author rebuttal drafting."
 ---
 
 # Nature Reviewer Assessment Skill

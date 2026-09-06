@@ -9,16 +9,9 @@ description: >-
 
 # Nature Figure Making — Router
 
-This skill is split into two layers:
-
-- A **static layer** under `static/` that holds versioned, reusable content fragments (the figure contract and default stance, plus a per-backend quick-start for Python and R).
-- A **dynamic layer** (this file plus `manifest.yaml`) that detects the plotting backend and loads only the fragment needed for the current job. The large design, API, pattern, and QA material lives in on-demand references.
-
-Do not try to apply the figure logic from memory or from this router. Always load fragments from disk as described below.
-
 ## Routing protocol
 
-Follow these steps every time the skill is invoked.
+For a new task, load the core and matching resources below. Reuse already loaded guidance on follow-ups; load more only when the task needs it.
 
 ### 0. Check for graphical-abstract and AI-schematic routes
 
@@ -148,10 +141,3 @@ The files under `references/` are deep references, not defaults. Open them on de
 
 Do not infer flagship Nature or NMI requirements from a Nature Communications
 corpus or from the visual-style examples in this skill.
-
-## Why this split
-
-- The static layer is versioned and reviewable. The backend gate is now explicit in the manifest rather than buried in prose.
-- The dynamic layer keeps each invocation cheap: only the selected backend's quick-start enters context, and the 2,600+ lines of reference depth load only when a step needs them.
-- The router itself is short on purpose. Update fragments and references, not this file, when adding scope.
-- This structure mirrors `nature-writing`, `nature-polishing`, `nature-reader`, and `nature-paper2ppt`.

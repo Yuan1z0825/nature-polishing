@@ -91,7 +91,7 @@ references:
       path: references/phrasebank-playbook.md
     - condition: needs academic style, register, article use, or mechanics checks
       path: references/style-guardrails.md
-    - condition: polishing or proofreading a full manuscript rather than a passage, or the text has been through more than one round of editing — sweep for accumulated terminology/unit/number drift, headline counts that do not reconcile, claims contradicted by the paper's own tables, tense parallelism, and prose that restates displays
+    - condition: whole-manuscript consistency audit, or local discrepancies suggest wider terminology/unit/number drift, inconsistent counts, or claims contradicted by the paper's own tables; do not restart a full sweep merely because another editing round occurs
       path: ../nature-shared/core/consistency-sweep.md
     - condition: needs deeper writing-strategy principles
       path: references/writing-strategy.md

@@ -5,9 +5,10 @@ it fixes the vocabulary before drafting. This file is detective: it finds the dr
 manuscript has already accumulated, which is what happens to every manuscript that has been revised
 more than once.
 
-Use it when polishing or proofreading a full manuscript, when self-reviewing before submission, when
-auditing a revision, or whenever multiple rounds of editing have touched the same document. Do not
-use it as a substitute for building a ledger on a fresh draft.
+Use it when polishing or proofreading a full manuscript, self-reviewing before submission, or
+auditing cross-document consistency. For a local edit, check the affected terms, numbers, and
+claims first; expand to the full sweep when discrepancies suggest wider drift or the user asks
+for it. Do not use it as a substitute for building a ledger on a fresh draft.
 
 Two facts drive the method:
 
@@ -112,7 +113,7 @@ saying what the old text already said.
 ## 6. Order of operations
 
 1. Numeric self-consistency and claims-versus-data (sections 3 and 4). Fix content before wording.
-2. Terminology sweep (sections 1 and 2), repeated until a pass finds nothing new.
+2. Terminology sweep (sections 1 and 2). After correcting a discrepancy, recheck affected occurrences and related claims; repeat a broader sweep only when changes or new findings warrant it.
 3. Redundancy pass (section 5).
 4. Recompile and re-verify anything that depends on pagination.
 

@@ -1,6 +1,6 @@
 # Workflow
 
-Run these nine steps for any paper-to-deck job. The paper-type fragment loaded for this job sets the narrative arc; this workflow is the shared spine. Deep design, figure, and self-review material lives in the on-demand references named below.
+Use these nine steps to create a new deck. For an existing-deck edit, reuse its source material, narrative, and assets, apply the affected authoring steps, and verify the revised deck. Deep design, figure, and self-review material lives in the on-demand references named below.
 
 ## Step 1. Read and extract source material
 

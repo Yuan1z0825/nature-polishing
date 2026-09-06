@@ -5,13 +5,6 @@ description: Polish, translate, or tighten existing academic prose while preserv
 
 # Nature-Style Academic Polishing — Router
 
-This skill is split into two layers:
-
-- A **static layer** under `static/` that holds versioned, reusable content fragments (core principles, paper-type playbooks, per-section guidance, language-specific rules, per-journal style).
-- A **dynamic layer** (this file plus `manifest.yaml`) that detects the request's axes and loads only the fragments needed for the current job.
-
-Do not try to apply the polishing logic from memory or from this router. Always load fragments from disk as described below.
-
 ## Routing protocol
 
 For a new polishing task, follow the routing below. For follow-up edits, reuse established task choices and already loaded guidance; read additional fragments only when the requested scope changes.
@@ -92,7 +85,7 @@ sections, conference-extension disclosure or production checks affect the
 revision, load
 `../nature-shared/journal-formats/nature-machine-intelligence.md`.
 
-When the job is a whole manuscript rather than a passage, or the text has already been through more than one round of editing, also load `../nature-shared/core/consistency-sweep.md`. Polishing passage by passage cannot see accumulated drift: one experimental factor under several names, the same quantity in two units, a metric at two precisions, or a superlative the paper's own table contradicts. Sweep for those before working on sentences, and repeat the sweep until a pass finds nothing new.
+For a whole-manuscript consistency audit or evidence of drift across passages, load `../nature-shared/core/consistency-sweep.md`. Local follow-up edits require checking the affected terms, numbers, and claims, not restarting a full audit solely because this is another editing round. After corrections, recheck affected occurrences and dependent claims; broaden the sweep when new discrepancies warrant it.
 
 **Layout/typesetting (排版) requests are different.** If the user asks to fix
 *placement* rather than wording — loose/sparse pages, stranded headings, figures
@@ -103,9 +96,3 @@ file is self-contained: it carries the diagnosis workflow (render → contact-sh
 read the log), the float-glue and `[H]`/`\clearpage`/`placeins` patterns, and the
 "regenerate wide figures taller at the source" rule. Always compile and visually
 inspect rendered pages before and after — never judge layout from the `.tex` alone.
-
-## Why this split
-
-- The static layer is versioned and reviewable. Adding a new journal style or paper type is one new file plus one manifest line.
-- The dynamic layer keeps each invocation cheap: only the fragments relevant to this draft enter context, instead of the full 1000-line monolith.
-- The router itself is short on purpose. Update fragments, not this file, when adding scope.

@@ -1,7 +1,6 @@
 ---
 name: researchwrite
-description: |
-  Proposal-first scientific writing pipeline, installed under the compatibility trigger researchwrite and the repository package name nature-proposal-writer. Use for composing, revising, or auditing research proposals, opening reports, research plans, and evidence-grounded scientific writing. Three modes (compose/revise/hybrid) with a four-layer QA pipeline. Enforces evidence-before-prose, argument-before-sections, and contracts-before-paragraphs.
+description: "Compose, revise, or audit research proposals, opening reports, and research plans from supporting evidence. Use for 研究计划、开题报告、科研项目申请书. Invoked as researchwrite for compatibility; use nature-writing for general manuscript sections."
 license: MIT
 metadata:
   hermes:

@@ -16,11 +16,12 @@ description: >
 
 always_load:
   - static/core/principles.md
-  - static/core/chinese-mode.md
   - static/core/workflow.md
 
 references:
   on_demand:
+    - condition: the user writes Chinese or requests Chinese guidance
+      path: static/core/chinese-mode.md
     - condition: running nature_citation.py — full flag list, long-article batch strategy, quick-guide tables
       path: references/script-usage.md
     - condition: translating a manuscript claim into search queries and support grades

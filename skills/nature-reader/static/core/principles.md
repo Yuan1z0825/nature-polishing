@@ -10,11 +10,11 @@ Use this skill to turn a research paper into a complete Markdown reading artifac
 - preserve stable page and block anchors for traceability
 - write a complete `paper.md` by default, plus `source_map.json`, `translation_notes.md`, and `assets/`
 
-This skill is for papers, preprints, and conference proceedings across disciplines. It is not limited to Nature-family journals. If the user only wants a summary, use a summarization skill instead. If the user only wants citation search, use a citation skill instead.
+This skill is for papers, preprints, and conference proceedings across disciplines. It is not limited to Nature-family journals. Honor an explicit request for a summary, excerpt, or source-linked answer at that scope; no separate summarization skill is required. Citation-only searches belong to the appropriate citation workflow.
 
 ## Non-negotiable defaults
 
-When the user asks for paper translation, reading, `nature-reader`, `中英文对照`, `原文对照`, `全文翻译`, or `翻译解读`, produce a paragraph-level bilingual reader by default.
+When the user requests a reader, `中英文对照`, `原文对照`, `全文翻译`, or invokes `nature-reader` without a narrower deliverable, produce a paragraph-level bilingual reader by default. An explicit question, summary, or excerpt request takes precedence; do not expand it into full-paper processing.
 
 Do not replace the reader with:
 

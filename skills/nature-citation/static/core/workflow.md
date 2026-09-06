@@ -94,4 +94,4 @@ S001: [source segment]
 - [missing full-text check, contradictory evidence, no direct CNS literature, etc.]
 ```
 
-Put the HTML browser path FIRST, above everything else, so the user can immediately open and browse candidates. If no suitable CNS/Nature-series paper exists, say so plainly and suggest the best nearby options from non-CNS literature only if the user wants broader coverage. If the text is long, mention the batch strategy used, especially when you limited the run with `--batch-size` or `--max-segments`.
+When HTML review artifacts were generated, put the existing browser path first so the user can browse candidates. Otherwise omit the browser block; do not create extra artifacts or report a nonexistent path merely to fill the template. If no suitable CNS/Nature-series paper exists, say so plainly and suggest the best nearby options from non-CNS literature only if the user wants broader coverage. If the text is long, mention the batch strategy used, especially when you limited the run with `--batch-size` or `--max-segments`.

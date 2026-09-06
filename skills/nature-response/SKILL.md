@@ -9,16 +9,9 @@ description: >-
 
 # Nature Reviewer Response — Router
 
-This skill is split into two layers:
-
-- A **static layer** under `static/` that holds versioned, reusable content fragments (the default stance and red lines, and the response workflow with output format).
-- A **dynamic layer** (this file plus `manifest.yaml`) that loads the core every time and reaches for the deeper response references or templates only when a step needs them.
-
-Do not try to apply the response logic from memory or from this router. Always load fragments from disk as described below.
-
 ## Routing protocol
 
-Follow these four steps every time the skill is invoked.
+For a new task, load the core and matching resources below. Reuse already loaded guidance on follow-ups; load more only when the task needs it.
 
 ### 1. Load the manifest and the core layer
 
@@ -65,10 +58,3 @@ Never invent experiments, citations, line numbers, figure panels, supplementary 
 The files under `references/` and `templates/` are deep resources, not defaults. Open them on demand per the `references.on_demand` table in the manifest — for example `references/comment-taxonomy.md` to classify comments, `references/action-mapping.md` for tracker fields, `references/tone-and-stance.md` for disagreement wording, `references/difficult-cases.md` for impossible experiments / conflicting reviewers / appeal-like cases, `references/chinese-author-alignment.md` for Chinese author notes, `references/latex-templates.md` for `.tex` cover/response/redline outputs, `../nature-shared/core/main-text-discipline.md` for reviewer-driven manuscript additions and evidence relocation, `references/package-consistency-audit.md` whenever the manuscript is edited alongside the letter or the package is about to be compiled and delivered, and `references/qa-checklist.md` before finalizing.
 
 `qa-checklist.md` and `package-consistency-audit.md` are complementary and both apply to a final package: the first asks whether the response is complete, honest, and well-toned; the second asks whether the marked manuscript, the clean manuscript, and the letter actually agree with each other after editing. For a LaTeX package, run `scripts/check_package_consistency.py` after the first complete draft, after every manuscript edit, and immediately before delivery. Any manuscript edit invalidates the letter's verbatim quotes and page references, so re-run the audit rather than treating it as a one-time final check.
-
-## Why this split
-
-- The static layer is versioned and reviewable; the core stays small for a normal response.
-- The dynamic layer keeps each invocation cheap: the difficult-case, taxonomy, and QA depth load only when a step needs them.
-- The router itself is short on purpose. Update fragments and references, not this file, when adding scope.
-- This structure mirrors `nature-writing`, `nature-polishing`, `nature-reader`, `nature-paper2ppt`, `nature-figure`, and `nature-citation`.

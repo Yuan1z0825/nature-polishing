@@ -5,13 +5,6 @@ description: Draft or restructure scientific manuscript arguments, sections, and
 
 # Nature-Style Scientific Writing — Router
 
-This skill is split into two layers:
-
-- A **static layer** under `static/` that holds versioned, reusable content fragments (core stance + workflow, paper-type playbooks, per-section drafting guidance, initial-submission guidance, language-specific rules, per-journal style).
-- A **dynamic layer** (this file plus `manifest.yaml`) that detects the request's axes and loads only the fragments needed for the current job.
-
-Do not try to apply the drafting logic from memory or from this router. Always load fragments from disk as described below.
-
 ## Routing protocol
 
 For a new drafting task, follow the routing below. For follow-up edits, reuse established task choices and already loaded guidance; read additional fragments only when the requested scope changes.
@@ -130,10 +123,3 @@ The files under `references/` are deep references and the example library, not d
 - `nature-writing` owns **initial submission** materials prepared before peer review.
 - `nature-response` owns revision cover letters, rebuttals, point-by-point responses, marked manuscripts, appeals, and other post-decision correspondence.
 - Route graphical abstracts and TOC graphics to `nature-figure`; route simulated pre-submission peer review to `nature-reviewer`.
-
-## Why this split
-
-- The static layer is versioned and reviewable. Adding a new journal style, paper type, or section is one new file plus one manifest line.
-- The dynamic layer keeps each invocation cheap: only the fragments relevant to this draft enter context, instead of the full multi-thousand-line reference set.
-- The router itself is short on purpose. Update fragments, not this file, when adding scope.
-- This structure mirrors `nature-polishing` so shared content can later be lifted into a `nature-shared/` layer used by both skills.
