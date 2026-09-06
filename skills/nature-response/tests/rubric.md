@@ -7,13 +7,15 @@ Use this rubric to manually evaluate `nature-response` outputs against the Markd
 Pass when:
 
 - The decision type is extracted from an explicit editor letter or user statement.
-- When it remains unclear, the skill asks whether this is Major Revision or Minor Revision before drafting strategy or response prose.
+- When it remains unclear, the skill asks before decision-dependent package strategy or complete-package drafting, while continuing independent inspection.
+- Local wording edits, audits of existing replies, and comment-level triage proceed without requiring a decision label or expanding into a full package.
 - Major Revision receives an evidence-first, potentially structural work plan.
 - Minor Revision receives a bounded correction plan without downgrading any genuinely major or blocking concern.
 
 Fail when:
 
 - The skill guesses the decision type from reviewer tone, comment count, or apparent workload.
+- It blocks a local edit solely because Major/Minor Revision status is unknown.
 - It drafts the same undifferentiated strategy for Major and Minor Revision.
 - It treats the Minor Revision label as permission to minimize an evidence, statistics, ethics, or integrity concern.
 

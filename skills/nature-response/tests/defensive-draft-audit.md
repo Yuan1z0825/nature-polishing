@@ -22,6 +22,7 @@ Author notes:
 ## Expected behavior
 
 - Detect task mode as `audit` or `revise`.
+- Proceed with the bounded draft audit even though the editorial decision is not supplied; do not select a Major/Minor package strategy.
 - Assign stable IDs `R1.1` and `R1.2`.
 - Flag the author draft as defensive and insufficiently traceable.
 - Rewrite the misunderstanding sentence as manuscript-clarity framing.

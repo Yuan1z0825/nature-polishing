@@ -8,13 +8,16 @@ If reviewer boundaries or comment segmentation are ambiguous, flag the ambiguity
 
 ## Decision-type gate and revision strategy
 
-For normal revision-response work, determine the editorial decision before drafting the response
-strategy or response prose:
+Determine the editorial decision before selecting a new package-level revision strategy or
+drafting a complete response package. Local wording edits, audits of existing replies, and
+comment-level triage can proceed with decision type marked unknown; they do not select a
+Major/Minor package strategy or establish submission readiness.
 
 1. Use an explicit label in the editor decision letter or revision invitation when supplied.
 2. Normalize informal author wording such as `major review` and `minor review` to `Major Revision`
    and `Minor Revision` when the meaning is unambiguous.
-3. If the decision remains unclear, ask one concise question in the user's language and pause:
+3. If the requested work depends on the decision and it remains unclear, ask one concise question
+   in the user's language and pause only that work; continue independent inspection:
    `这是 Major Revision（大修）还是 Minor Revision（小修）？如果决定信没有明确写，请把决定信发给我，我帮你判断。`
    English default: `Is this a Major Revision or a Minor Revision? If the decision letter does
    not state it clearly, please send it and I can help classify the decision.`
@@ -34,10 +37,14 @@ Minor Revision. Journal instructions and explicit editor directions override the
 
 ## Workflow
 
+For local edits or bounded audits, apply only the relevant item-level steps and return the
+requested passage or findings with factual gaps flagged. The complete tracker, cover letter,
+reviewer file set, and package readiness assessment apply when a package is requested.
+
 1. Identify task mode and input readiness: `draft`, `audit`, `revise`, `triage-only`, `cover-letter`, `revision-package`, `latex-template`, or `appeal-like`.
 2. If the input is a pasted journal email, automatically extract manuscript title, manuscript ID, journal, decision type, editor instructions, reviewer-report boundaries, required revision files, deadline, reviewer-visibility rules, and portal-specific constraints before drafting.
-3. Pass the decision-type gate. For normal revision modes, pause and ask the user when the decision remains unclear; do not draft a generic response that silently treats Major and Minor Revision as equivalent.
-4. Select the decision-specific package strategy while preserving item-level severity.
+3. Apply the decision-type gate to package-level work. If that work depends on an unknown decision, pause and ask the user; do not draft a generic response that silently treats Major and Minor Revision as equivalent. Continue local edits, visible-draft audits, and comment-level triage that do not depend on the label.
+4. When a package strategy is needed and the decision is known, select it while preserving item-level severity.
 5. Extract editor instructions first and assign IDs such as `E.1`, then split reviewer comments with IDs such as `R1.1`, `R1.2`, and `R2.1`.
 6. Classify each item by category, severity, action label, work status, required input, expected output, finalization-blocking state, package readiness, and risk.
 7. Create an internal/editor master strategy and tracker before drafting prose. It may record duplicates and conflicts across reviewers, but label it clearly as not reviewer-facing.

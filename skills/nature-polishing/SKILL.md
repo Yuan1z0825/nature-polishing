@@ -1,6 +1,6 @@
 ---
 name: nature-polishing
-description: Polish, restructure, or translate academic prose into concise Nature-leaning English while preserving facts, evidence boundaries, terminology, and citation intent. Use for manuscript paragraphs, abstracts, introductions, Results, discussions, conclusions, titles, Methods, Chinese drafts, proofreading, language editing, and general academic or scientific writing. Also use to shorten bloated Results, allocate evidence across main text, captions, and Supplementary Information, prevent reviewer-driven revision accretion, reduce repeated statistics or claims, and apply paragraph-necessity checks. Covers LaTeX layout or typesetting fixes such as sparse pages, stranded headings, oversized or split figures, float errors, multi-panel arrangement, and sparse Supplementary Information via references/latex-layout.md. Trigger on 学术写作、科研写作、论文润色、SCI写作、英文论文润色、语言润色、润色、改写、学术英语、排版.
+description: Polish, translate, or tighten existing academic prose while preserving facts, terminology, and evidence boundaries. Use for 论文润色、学术翻译、正文精简, or manuscript LaTeX layout fixes. Use nature-writing when the main task is drafting new sections or rebuilding the manuscript argument.
 ---
 
 # Nature-Style Academic Polishing — Router
@@ -14,7 +14,7 @@ Do not try to apply the polishing logic from memory or from this router. Always 
 
 ## Routing protocol
 
-Follow these five steps every time the skill is invoked.
+For a new polishing task, follow the routing below. For follow-up edits, reuse established task choices and already loaded guidance; read additional fragments only when the requested scope changes.
 
 ### 1. Load the manifest and the core layer
 

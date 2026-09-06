@@ -1,6 +1,6 @@
 ---
 name: nature-writing
-description: Draft, restructure, or plan Nature-style manuscript sections and initial-submission materials from author-provided claims, results, figures, notes, or Chinese drafts. Use for abstracts, introductions, related work, methods, Results or experiments, discussions, conclusions, titles, full manuscript arguments, and first-submission packages such as cover letters, title pages, highlights, author contributions, availability or declaration text, and reviewer suggestions. Also use to classify Results evidence, decide what belongs in main text, captions, Methods or source data, or Supplementary Information, compress Results to the shortest sufficient evidence chain, prevent revision accretion, and audit paragraph necessity or claim repetition. Trigger on drafting a paper or section, structuring a manuscript, academic writing, first submission, 投稿材料、首次投稿、投稿信、标题页、亮点、作者贡献、数据可用性声明、推荐审稿人.
+description: Draft or restructure scientific manuscript arguments, sections, and initial-submission materials from author-provided evidence. Use for 论文写作、章节起草、论证重构、正文压缩、首次投稿材料. Use nature-polishing for language-only edits to existing prose and nature-response for post-decision correspondence.
 ---
 
 # Nature-Style Scientific Writing — Router
@@ -14,7 +14,7 @@ Do not try to apply the drafting logic from memory or from this router. Always l
 
 ## Routing protocol
 
-Follow these five steps every time the skill is invoked.
+For a new drafting task, follow the routing below. For follow-up edits, reuse established task choices and already loaded guidance; read additional fragments only when the requested scope changes.
 
 ### 1. Load the manifest and the core layer
 
@@ -55,7 +55,7 @@ Apply the loaded fragments in this priority order:
 5. Journal-specific framing and constraints.
 6. Language-specific sentence and paragraph rules (apply last).
 
-For `task=manuscript`, run the workflow in `core/workflow.md` end-to-end. Do not skip planning just because the user asked for prose immediately.
+For `task=manuscript`, use `core/workflow.md` at the requested scale. Plan the argument for a new section or substantial restructuring; a title, single paragraph, or local follow-up needs only the applicable evidence, wording, and consistency checks. Complete the requested prose unless a material unresolved decision blocks it or the user requested an outline for approval first.
 
 When drafting or restructuring Results, or compressing a full manuscript's main
 text, also load `../nature-shared/core/main-text-discipline.md` before building

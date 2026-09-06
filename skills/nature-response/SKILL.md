@@ -1,17 +1,10 @@
 ---
 name: nature-response
 description: >-
-  Draft, audit, or revise Nature-style revision correspondence packages: point-by-point
-  reviewer-separated response letters, rebuttal letters, revision cover letters, LaTeX
-  cover/response templates, and red-marked revised-manuscript excerpts. Keep mutually blind
-  reviewers isolated so no reviewer-facing response reveals another reviewer's comments,
-  numbering, recommendation, or author response. Prevent reviewer-driven manuscript
-  accretion by preferring replacement, compression, or SI relocation over appending
-  non-central defense prose. Use for reviewer comments, editor
-  decision letters, pasted editorial emails, response drafts, cover letters, response to
-  reviewers, rebuttal, 修回信, 返修邮件, 编辑邮件, 返修 cover letter, 审稿意见回复,
-  逐点回复, 大修回复, 小修回复, 回复审稿人, 修改稿回复, 写rebuttal, 回应审稿意见,
-  标红修改, or LaTeX 模板.
+  Draft, audit, or revise responses to peer review, revision cover letters, and
+  marked-manuscript or LaTeX revision packages. Use for 审稿意见回复、逐点回复、返修信、
+  rebuttals and edits to existing response drafts. Initial-submission materials
+  belong to nature-writing; simulated peer review belongs to nature-reviewer.
 ---
 
 # Nature Reviewer Response — Router
@@ -42,12 +35,17 @@ Unlike nature-writing or nature-figure, nature-response has no fragment axis. It
 - **decision type** — minor revision, major revision, revise-and-resubmit, transfer after review, or unclear.
 - **user language** — if the user writes Chinese, also produce the 中文核对 block.
 
-Decision type is a required intake gate for normal revision work. First extract it from an
-editor decision letter when available. If it is still unclear, ask the user whether this is a
-`Major Revision` or `Minor Revision` before drafting a response strategy or response prose. Do
-not infer the decision from the number, tone, or apparent difficulty of reviewer comments.
+Decision type is required for a new package-level revision strategy or complete response package.
+First extract it from the editor letter or task context. If it remains unclear, ask whether this
+is a `Major Revision` or `Minor Revision` and pause only decision-dependent work. A local wording
+edit, audit of an existing reply, or comment-level triage may proceed with decision type marked
+unknown. Do not infer the decision from the number, tone, or difficulty of reviewer comments.
 
 Use `references/intake-and-routing.md` to fix the task mode, minimum inputs, and readiness state before drafting. Route appeal-like cases separately; do not draft an appeal as the default path.
+
+For a local edit or bounded audit, return the revised passage or findings and relevant missing
+facts. Do not expand it into a master tracker, cover letter, or complete revision package unless
+requested. Apply the package workflow below only to the parts needed for the requested output.
 
 ### 3. Run the workflow
 
