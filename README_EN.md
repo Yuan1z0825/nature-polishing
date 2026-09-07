@@ -707,4 +707,4 @@ After adding a skill, update the [Skill Index](#6-skill-index) table:
 
 ## 8. Star History
 
-[![Star History Chart](assets/star-history-20260904T023603Z.svg)](https://star-history.com/#Yuan1z0825/nature-skills&Date)
+[![Star History Chart](assets/star-history-20260907T023752Z.svg)](https://star-history.com/#Yuan1z0825/nature-skills&Date)
