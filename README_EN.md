@@ -37,8 +37,8 @@
   - [5.1 `npx skills` Installation](#51-npx-skills-installation)
   - [5.2 Claude Code Installation](#52-claude-code-installation)
   - [5.3 Codex Installation](#53-codex-installation)
-  - [5.4 Other Agent Scenarios](#54-other-agent-scenarios)
-  - [5.5 Chatbox Installation and Usage](#55-chatbox-installation-and-usage)
+  - [5.4 Chatbox Installation and Usage](#54-chatbox-installation-and-usage)
+  - [5.5 Other Agent Scenarios](#55-other-agent-scenarios)
 - [6. Skill Index](#6-skill-index)
 - [7. Contribution and Development](#7-contribution-and-development)
 - [8. Star History](#8-star-history)
@@ -499,23 +499,7 @@ Each destination has a separate log at
 `~/.local/state/nature-skills/<destination-id>/autoupdate.log`. Newly fetched
 skills normally take full effect in the next session.
 
-### 5.4 Other Agent Scenarios
-
-For OpenClaw, OpenCode, and Hermes, see the dedicated [integration guide](docs/open-source-agent-frameworks_EN.md).
-
-For other agents, keep a stable repository clone and create a lightweight
-subagent, slash command, or custom prompt wrapper that points to the real
-`skills/*/SKILL.md` files. Preserve `skills/nature-shared/`.
-
-For manual or other-agent use:
-
-1. Copy complete skill directories into your prompt library or project.
-2. Preserve `SKILL.md`, `manifest.yaml`, `static/`, `references/`, scripts,
-   assets, and required `skills/nature-shared/` files.
-3. If the target agent has its own format requirements, adjust the frontmatter
-   and body structure.
-
-### 5.5 Chatbox Installation and Usage
+### 5.4 Chatbox Installation and Usage
 
 [Chatbox](https://chatboxai.app/) desktop provides a graphical Skills manager. Use a version with a **Settings → Skills** entry; this section applies to the desktop app.
 
@@ -555,6 +539,22 @@ Check the skill-loading and tool-execution records in the conversation to confir
 Installing skills adds instructions and supporting files. Configure Python/R, PDF/PPTX tools, browsers, and MCP services according to each skill's documentation. For local files or scripts, grant the required directory and command access when Chatbox prompts you. External services such as image generation require their own credentials. A successful skill installation does not mean these external capabilities are configured.
 
 Use **Check Update** in a skill's action menu and follow the prompts to update it; also check `nature-shared` when it is a dependency. If GitHub scanning or downloading fails, download and extract this repository through **Code → Download ZIP**, click **Open Skills Folder** in Chatbox, and place the complete skill directories and `nature-shared` alongside one another in that folder. Refresh the skill list and enable them. Preserve `references/`, `static/`, scripts, and assets; do not copy only `SKILL.md`. For manual copies, match the directory name to the `name` in `SKILL.md` (for example, name the `nature-proposal-writer` directory `researchwrite`). Manually copied skills require manual updates.
+
+### 5.5 Other Agent Scenarios
+
+For OpenClaw, OpenCode, and Hermes, see the dedicated [integration guide](docs/open-source-agent-frameworks_EN.md).
+
+For other agents, keep a stable repository clone and create a lightweight
+subagent, slash command, or custom prompt wrapper that points to the real
+`skills/*/SKILL.md` files. Preserve `skills/nature-shared/`.
+
+For manual or other-agent use:
+
+1. Copy complete skill directories into your prompt library or project.
+2. Preserve `SKILL.md`, `manifest.yaml`, `static/`, `references/`, scripts,
+   assets, and required `skills/nature-shared/` files.
+3. If the target agent has its own format requirements, adjust the frontmatter
+   and body structure.
 
 ## 6. Skill Index
 

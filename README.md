@@ -37,8 +37,8 @@
   - [5.1 `npx skills` 安装方式](#51-npx-skills-安装方式)
   - [5.2 Claude Code 安装方式](#52-claude-code-安装方式)
   - [5.3 Codex 安装方式](#53-codex-安装方式)
-  - [5.4 其他 Agent 场景](#54-其他-agent-场景)
-  - [5.5 Chatbox 安装与使用](#55-chatbox-安装与使用)
+  - [5.4 Chatbox 安装与使用](#54-chatbox-安装与使用)
+  - [5.5 其他 Agent 场景](#55-其他-agent-场景)
 - [6. 技能索引](#6-技能索引)
 - [7. 贡献与开发](#7-贡献与开发)
 - [8. Star 历史](#8-star-历史)
@@ -422,19 +422,7 @@ git clone https://github.com/Yuan1z0825/nature-skills.git ~/.codex/.nature-skill
 
 每个安装目标使用独立日志，路径为 `~/.local/state/nature-skills/<目标目录编号>/autoupdate.log`。拉取到的新技能通常在下一次会话中完整生效。
 
-### 5.4 其他 Agent 场景
-
-OpenClaw、OpenCode、Hermes 的具体接入方式见 [OpenClaw / OpenCode / Hermes 接入教程](docs/open-source-agent-frameworks.md)。
-
-用于其他 agent 时，建议保留一个稳定的仓库 clone，再创建轻量 subagent、slash command 或 custom prompt wrapper，指向真实的 `skills/*/SKILL.md`，并保留 `skills/nature-shared/`。
-
-手动或其他 agent 使用时：
-
-1. 将完整技能目录复制到你的 prompt library 或项目中。
-2. 保留 `SKILL.md`、`manifest.yaml`、`static/`、`references/`、脚本、资产和需要的 `skills/nature-shared/` 文件。
-3. 如目标 agent 有自己的格式要求，可调整 frontmatter 和正文结构。
-
-### 5.5 Chatbox 安装与使用
+### 5.4 Chatbox 安装与使用
 
 [Chatbox](https://chatboxai.app/zh) 桌面版提供图形化 Skills 管理界面。请使用带有「设置 → 技能（Skills）」入口的版本；本节适用于桌面端。
 
@@ -472,6 +460,18 @@ OpenClaw、OpenCode、Hermes 的具体接入方式见 [OpenClaw / OpenCode / Her
 Skills 安装的是指令和配套文件。Python/R、PDF/PPTX 工具、浏览器和 MCP 服务等运行依赖仍需按具体技能说明配置；涉及本地文件或脚本时，按 Chatbox 提示授权所需目录和命令。生成图片等外部服务需要对应服务的凭据。安装成功不代表这些外部能力已配置完成。
 
 在技能的操作菜单中可「检查更新」并按提示更新；有共享依赖时也要检查 `nature-shared`。如果 GitHub 扫描或下载失败，可从本仓库的「Code → Download ZIP」下载并解压，点击 Chatbox 的「打开技能文件夹」，将所需的完整技能目录及 `nature-shared` 放到该文件夹的同一级，然后刷新技能列表并启用。保留 `references/`、`static/`、脚本和资产；不要只复制 `SKILL.md`。手动复制时，目录名应与 `SKILL.md` 中的 `name` 一致（例如将 `nature-proposal-writer` 目录命名为 `researchwrite`）。手动复制的技能需要手动更新。
+
+### 5.5 其他 Agent 场景
+
+OpenClaw、OpenCode、Hermes 的具体接入方式见 [OpenClaw / OpenCode / Hermes 接入教程](docs/open-source-agent-frameworks.md)。
+
+用于其他 agent 时，建议保留一个稳定的仓库 clone，再创建轻量 subagent、slash command 或 custom prompt wrapper，指向真实的 `skills/*/SKILL.md`，并保留 `skills/nature-shared/`。
+
+手动或其他 agent 使用时：
+
+1. 将完整技能目录复制到你的 prompt library 或项目中。
+2. 保留 `SKILL.md`、`manifest.yaml`、`static/`、`references/`、脚本、资产和需要的 `skills/nature-shared/` 文件。
+3. 如目标 agent 有自己的格式要求，可调整 frontmatter 和正文结构。
 
 ## 6. 技能索引
 
