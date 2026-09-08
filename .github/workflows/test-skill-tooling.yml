@@ -72,6 +72,7 @@ jobs:
           python -m pip install \
             -c .github/requirements-ci.txt \
             pytest \
+            python-docx \
             -r skills/nature-academic-search/mcp-server/requirements.txt \
             -r skills/nature-downloader/requirements.txt \
             -r skills/nature-image2ppt/requirements.txt
