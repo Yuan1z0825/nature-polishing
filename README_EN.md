@@ -38,6 +38,7 @@
   - [5.2 Claude Code Installation](#52-claude-code-installation)
   - [5.3 Codex Installation](#53-codex-installation)
   - [5.4 Other Agent Scenarios](#54-other-agent-scenarios)
+  - [5.5 Chatbox Installation and Usage](#55-chatbox-installation-and-usage)
 - [6. Skill Index](#6-skill-index)
 - [7. Contribution and Development](#7-contribution-and-development)
 - [8. Star History](#8-star-history)
@@ -513,6 +514,47 @@ For manual or other-agent use:
    assets, and required `skills/nature-shared/` files.
 3. If the target agent has its own format requirements, adjust the frontmatter
    and body structure.
+
+### 5.5 Chatbox Installation and Usage
+
+[Chatbox](https://chatboxai.app/) desktop provides a graphical Skills manager. Use a version with a **Settings → Skills** entry; this section applies to the desktop app.
+
+**Install from GitHub**
+
+1. Open **Settings → Skills** in Chatbox and click **Install from GitHub**.
+2. Paste `https://github.com/Yuan1z0825/nature-skills` and click **Scan**.
+3. Select the skills you need and click **Install Selected**. For a first try, choose `nature-polishing` and `nature-shared`; use **Select all** if you want the full collection.
+4. Check the result under **Installed Skills** and make sure the skills you want to use are enabled.
+
+`nature-shared` is a shared support package. Install it alongside skills that reference it, including `nature-polishing`, `nature-writing`, `nature-response`, `nature-reader`, and `nature-paper2ppt`; do not invoke it as a standalone task. Installing one skill does not automatically install other skill dependencies. The list may show frontmatter names: for example, `nature-proposal-writer` appears as `researchwrite`.
+
+**Start using the skills**
+
+Create a conversation, select a model that supports tool calling, and enable **Agent Mode**. Paste your text into the conversation and name the skill explicitly. For example:
+
+```text
+Use nature-polishing to rewrite the following Chinese paragraph in Nature-style English.
+Preserve its academic meaning, numerical values, and limits on conclusions.
+List the main changes and explain the reasons:
+
+[Paste your manuscript paragraph here]
+```
+
+For paper reading, install `nature-reader` and `nature-shared`, provide the paper file or an accessible local path, and ask:
+
+```text
+Use nature-reader to turn this paper into a Chinese-English Markdown reader
+with aligned figures and text. Preserve equations and source anchors,
+and save the deliverables to my specified output directory.
+```
+
+Check the skill-loading and tool-execution records in the conversation to confirm that the intended skill was loaded. If it does not trigger, check the skill toggle, Agent Mode, and whether the selected model supports tool calling.
+
+**Runtime dependencies and updates**
+
+Installing skills adds instructions and supporting files. Configure Python/R, PDF/PPTX tools, browsers, and MCP services according to each skill's documentation. For local files or scripts, grant the required directory and command access when Chatbox prompts you. External services such as image generation require their own credentials. A successful skill installation does not mean these external capabilities are configured.
+
+Use **Check Update** in a skill's action menu and follow the prompts to update it; also check `nature-shared` when it is a dependency. If GitHub scanning or downloading fails, download and extract this repository through **Code → Download ZIP**, click **Open Skills Folder** in Chatbox, and place the complete skill directories and `nature-shared` alongside one another in that folder. Refresh the skill list and enable them. Preserve `references/`, `static/`, scripts, and assets; do not copy only `SKILL.md`. For manual copies, match the directory name to the `name` in `SKILL.md` (for example, name the `nature-proposal-writer` directory `researchwrite`). Manually copied skills require manual updates.
 
 ## 6. Skill Index
 
