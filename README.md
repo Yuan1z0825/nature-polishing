@@ -37,7 +37,8 @@
   - [5.1 `npx skills` 安装方式](#51-npx-skills-安装方式)
   - [5.2 Claude Code 安装方式](#52-claude-code-安装方式)
   - [5.3 Codex 安装方式](#53-codex-安装方式)
-  - [5.4 其他 Agent 场景](#54-其他-agent-场景)
+  - [5.4 Chatbox 安装与使用](#54-chatbox-安装与使用)
+  - [5.5 其他 Agent 场景](#55-其他-agent-场景)
 - [6. 技能索引](#6-技能索引)
 - [7. 贡献与开发](#7-贡献与开发)
 - [8. Star 历史](#8-star-历史)
@@ -421,7 +422,46 @@ git clone https://github.com/Yuan1z0825/nature-skills.git ~/.codex/.nature-skill
 
 每个安装目标使用独立日志，路径为 `~/.local/state/nature-skills/<目标目录编号>/autoupdate.log`。拉取到的新技能通常在下一次会话中完整生效。
 
-### 5.4 其他 Agent 场景
+### 5.4 Chatbox 安装与使用
+
+[Chatbox](https://chatboxai.app/zh) 桌面版提供图形化 Skills 管理界面。请使用带有「设置 → 技能（Skills）」入口的版本；本节适用于桌面端。
+
+**从 GitHub 安装**
+
+1. 打开 Chatbox 的「设置 → 技能」，点击「从 GitHub 安装」。
+2. 粘贴 `https://github.com/Yuan1z0825/nature-skills`，点击「扫描」。
+3. 勾选需要的技能，点击「安装已选」。初次体验可选择 `nature-polishing` 和 `nature-shared`；需要整套技能时可以「全选」。
+4. 在「已安装技能」中确认安装结果，并确认需要使用的技能已启用。
+
+`nature-shared` 是共享支持包。使用 `nature-polishing`、`nature-writing`、`nature-response`、`nature-reader` 或 `nature-paper2ppt` 等引用它的技能时，需要一并安装；它不作为独立任务调用。安装单个技能不会自动补齐其他技能依赖。列表可能显示技能的 frontmatter 名称，例如 `nature-proposal-writer` 显示为 `researchwrite`。
+
+**开始使用**
+
+新建对话，选择支持工具调用的模型，开启「智能体模式（Agent Mode）」。把待处理文本粘贴到对话中，并明确写出技能名。例如：
+
+```text
+请使用 nature-polishing，把下面这段中文改写为 Nature 风格英文。
+保持原有学术含义、数值和结论边界，列出主要修改及理由：
+
+[在这里粘贴论文段落]
+```
+
+需要读论文时，可安装 `nature-reader` 和 `nature-shared`，提供论文文件或可访问的本地路径，再请求：
+
+```text
+请使用 nature-reader，把这篇论文做成图文对应的中英文对照 Markdown reader，
+保留公式和来源锚点，并将产物保存到我指定的输出目录。
+```
+
+检查对话中的技能加载和工具执行记录，确认实际加载了所需技能。若未触发，先检查技能开关、智能体模式以及当前模型是否支持工具调用。
+
+**运行依赖与更新**
+
+Skills 安装的是指令和配套文件。Python/R、PDF/PPTX 工具、浏览器和 MCP 服务等运行依赖仍需按具体技能说明配置；涉及本地文件或脚本时，按 Chatbox 提示授权所需目录和命令。生成图片等外部服务需要对应服务的凭据。安装成功不代表这些外部能力已配置完成。
+
+在技能的操作菜单中可「检查更新」并按提示更新；有共享依赖时也要检查 `nature-shared`。如果 GitHub 扫描或下载失败，可从本仓库的「Code → Download ZIP」下载并解压，点击 Chatbox 的「打开技能文件夹」，将所需的完整技能目录及 `nature-shared` 放到该文件夹的同一级，然后刷新技能列表并启用。保留 `references/`、`static/`、脚本和资产；不要只复制 `SKILL.md`。手动复制时，目录名应与 `SKILL.md` 中的 `name` 一致（例如将 `nature-proposal-writer` 目录命名为 `researchwrite`）。手动复制的技能需要手动更新。
+
+### 5.5 其他 Agent 场景
 
 OpenClaw、OpenCode、Hermes 的具体接入方式见 [OpenClaw / OpenCode / Hermes 接入教程](docs/open-source-agent-frameworks.md)。
 
