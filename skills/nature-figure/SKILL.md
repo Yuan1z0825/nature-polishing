@@ -1,21 +1,17 @@
 ---
 name: nature-figure
 description: >-
-  Create, revise, audit, and export submission-grade scientific figures for Nature-family and other high-impact venues in Python (matplotlib/seaborn) or R (ggplot2/patchwork/ComplexHeatmap), including multi-panel plots, figures4papers-style work, and journal-ready SVG/PDF/TIFF outputs. Use for paper or scientific plots, manuscript data visualization, 论文配图、学术写作配图、科研绘图、科研作图、画图、作图、出图、论文图表、可视化. Define the conclusion, evidence logic, data integrity, template compatibility, export needs, and reviewer risks before plotting; honor or persist the Python/R backend choice. Also use the separate OpenRouter GPT Image 2 route for explicit AI-generated graphical abstracts, mechanism diagrams, concept schematics, 论文示意图、机制示意图、图形摘要; this route skips backend choice and treats outputs as drafts. Do not use for interactive dashboards, statistics-only analysis, data cleaning, literature review, code debugging, pure photo editing, or Illustrator/Figma-first infographics without manuscript-figure intent.
+  Create, revise, audit, and export manuscript scientific figures in Python or R.
+  Use for 论文配图、科研绘图、多面板图 and submission-ready plots, or explicitly
+  requested AI-generated graphical abstracts and mechanism schematics. Not for
+  interactive dashboards, data cleaning, or statistics-only analysis.
 ---
 
 # Nature Figure Making — Router
 
-This skill is split into two layers:
-
-- A **static layer** under `static/` that holds versioned, reusable content fragments (the figure contract and default stance, plus a per-backend quick-start for Python and R).
-- A **dynamic layer** (this file plus `manifest.yaml`) that detects the plotting backend and loads only the fragment needed for the current job. The large design, API, pattern, and QA material lives in on-demand references.
-
-Do not try to apply the figure logic from memory or from this router. Always load fragments from disk as described below.
-
 ## Routing protocol
 
-Follow these steps every time the skill is invoked.
+For a new task, load the core and matching resources below. Reuse already loaded guidance on follow-ups; load more only when the task needs it.
 
 ### 0. Check for graphical-abstract and AI-schematic routes
 
@@ -145,10 +141,3 @@ The files under `references/` are deep references, not defaults. Open them on de
 
 Do not infer flagship Nature or NMI requirements from a Nature Communications
 corpus or from the visual-style examples in this skill.
-
-## Why this split
-
-- The static layer is versioned and reviewable. The backend gate is now explicit in the manifest rather than buried in prose.
-- The dynamic layer keeps each invocation cheap: only the selected backend's quick-start enters context, and the 2,600+ lines of reference depth load only when a step needs them.
-- The router itself is short on purpose. Update fragments and references, not this file, when adding scope.
-- This structure mirrors `nature-writing`, `nature-polishing`, `nature-reader`, and `nature-paper2ppt`.

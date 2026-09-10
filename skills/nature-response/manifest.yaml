@@ -24,7 +24,7 @@ references:
   on_demand:
     - condition: a reviewer or editor comment leads to additions, deletions, compression, relocation, or statistical-detail changes in the manuscript main text — classify the result, prevent revision accretion, separate main text/caption/SI functions, and run deletion, paragraph-necessity, and claim-repetition checks
       path: ../nature-shared/core/main-text-discipline.md
-    - condition: before drafting — identify task mode, enforce the Major/Minor decision-type gate, parse pasted decision emails, minimum inputs, editor IDs, readiness state, and clarifying-question need
+    - condition: identify task scope, apply the Major/Minor decision-type gate to package-level work, parse pasted decision emails, minimum inputs, editor IDs, readiness state, and clarifying-question need
       path: references/intake-and-routing.md
     - condition: source hierarchy, rule provenance, or policy-vs-advice boundaries
       path: references/source-basis.md

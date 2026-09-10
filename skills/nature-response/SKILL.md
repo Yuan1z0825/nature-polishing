@@ -1,31 +1,17 @@
 ---
 name: nature-response
 description: >-
-  Draft, audit, or revise Nature-style revision correspondence packages: point-by-point
-  reviewer-separated response letters, rebuttal letters, revision cover letters, LaTeX
-  cover/response templates, and red-marked revised-manuscript excerpts. Keep mutually blind
-  reviewers isolated so no reviewer-facing response reveals another reviewer's comments,
-  numbering, recommendation, or author response. Prevent reviewer-driven manuscript
-  accretion by preferring replacement, compression, or SI relocation over appending
-  non-central defense prose. Use for reviewer comments, editor
-  decision letters, pasted editorial emails, response drafts, cover letters, response to
-  reviewers, rebuttal, 修回信, 返修邮件, 编辑邮件, 返修 cover letter, 审稿意见回复,
-  逐点回复, 大修回复, 小修回复, 回复审稿人, 修改稿回复, 写rebuttal, 回应审稿意见,
-  标红修改, or LaTeX 模板.
+  Draft, audit, or revise responses to peer review, revision cover letters, and
+  marked-manuscript or LaTeX revision packages. Use for 审稿意见回复、逐点回复、返修信、
+  rebuttals and edits to existing response drafts. Initial-submission materials
+  belong to nature-writing; simulated peer review belongs to nature-reviewer.
 ---
 
 # Nature Reviewer Response — Router
 
-This skill is split into two layers:
-
-- A **static layer** under `static/` that holds versioned, reusable content fragments (the default stance and red lines, and the response workflow with output format).
-- A **dynamic layer** (this file plus `manifest.yaml`) that loads the core every time and reaches for the deeper response references or templates only when a step needs them.
-
-Do not try to apply the response logic from memory or from this router. Always load fragments from disk as described below.
-
 ## Routing protocol
 
-Follow these four steps every time the skill is invoked.
+For a new task, load the core and matching resources below. Reuse already loaded guidance on follow-ups; load more only when the task needs it.
 
 ### 1. Load the manifest and the core layer
 
@@ -42,12 +28,17 @@ Unlike nature-writing or nature-figure, nature-response has no fragment axis. It
 - **decision type** — minor revision, major revision, revise-and-resubmit, transfer after review, or unclear.
 - **user language** — if the user writes Chinese, also produce the 中文核对 block.
 
-Decision type is a required intake gate for normal revision work. First extract it from an
-editor decision letter when available. If it is still unclear, ask the user whether this is a
-`Major Revision` or `Minor Revision` before drafting a response strategy or response prose. Do
-not infer the decision from the number, tone, or apparent difficulty of reviewer comments.
+Decision type is required for a new package-level revision strategy or complete response package.
+First extract it from the editor letter or task context. If it remains unclear, ask whether this
+is a `Major Revision` or `Minor Revision` and pause only decision-dependent work. A local wording
+edit, audit of an existing reply, or comment-level triage may proceed with decision type marked
+unknown. Do not infer the decision from the number, tone, or difficulty of reviewer comments.
 
 Use `references/intake-and-routing.md` to fix the task mode, minimum inputs, and readiness state before drafting. Route appeal-like cases separately; do not draft an appeal as the default path.
+
+For a local edit or bounded audit, return the revised passage or findings and relevant missing
+facts. Do not expand it into a master tracker, cover letter, or complete revision package unless
+requested. Apply the package workflow below only to the parts needed for the requested output.
 
 ### 3. Run the workflow
 
@@ -67,10 +58,3 @@ Never invent experiments, citations, line numbers, figure panels, supplementary 
 The files under `references/` and `templates/` are deep resources, not defaults. Open them on demand per the `references.on_demand` table in the manifest — for example `references/comment-taxonomy.md` to classify comments, `references/action-mapping.md` for tracker fields, `references/tone-and-stance.md` for disagreement wording, `references/difficult-cases.md` for impossible experiments / conflicting reviewers / appeal-like cases, `references/chinese-author-alignment.md` for Chinese author notes, `references/latex-templates.md` for `.tex` cover/response/redline outputs, `../nature-shared/core/main-text-discipline.md` for reviewer-driven manuscript additions and evidence relocation, `references/package-consistency-audit.md` whenever the manuscript is edited alongside the letter or the package is about to be compiled and delivered, and `references/qa-checklist.md` before finalizing.
 
 `qa-checklist.md` and `package-consistency-audit.md` are complementary and both apply to a final package: the first asks whether the response is complete, honest, and well-toned; the second asks whether the marked manuscript, the clean manuscript, and the letter actually agree with each other after editing. For a LaTeX package, run `scripts/check_package_consistency.py` after the first complete draft, after every manuscript edit, and immediately before delivery. Any manuscript edit invalidates the letter's verbatim quotes and page references, so re-run the audit rather than treating it as a one-time final check.
-
-## Why this split
-
-- The static layer is versioned and reviewable; the core stays small for a normal response.
-- The dynamic layer keeps each invocation cheap: the difficult-case, taxonomy, and QA depth load only when a step needs them.
-- The router itself is short on purpose. Update fragments and references, not this file, when adding scope.
-- This structure mirrors `nature-writing`, `nature-polishing`, `nature-reader`, `nature-paper2ppt`, `nature-figure`, and `nature-citation`.

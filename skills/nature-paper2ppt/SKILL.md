@@ -1,20 +1,19 @@
 ---
 name: nature-paper2ppt
-description: Build a complete Nature-style Chinese PPTX presentation from a scientific paper, preprint, PDF, article text, figure legends, or reading notes. Use for journal club, group meeting, thesis seminar, paper sharing, conference or defense decks, and Chinese requests such as 论文做PPT、论文汇报、组会PPT、文献汇报、学术汇报、做幻灯片、读书报告PPT. It classifies paper type, builds an evidence-led story, selects key figures, writes Chinese slide content and speaker notes, creates the actual .pptx, and runs corrective QA for complete figure crops, stable alignment, text overflow, and de-templated Chinese academic expression. Also trigger when improving weak paper-to-PPT output with cropped figures, loose alignment, obvious AI-style wording, or heavy manual rework.
+description: Create or improve a Chinese academic PPTX from a scientific paper or research reading notes, with source figures and speaker notes. Use for 论文做PPT、文献汇报、组会PPT and paper-based conference or defense presentations.
 ---
 
 # Paper-to-PPTX — Router
 
-This skill is split into two layers:
-
-- A **static layer** under `static/` that holds versioned, reusable content fragments (core principles, toolchain policy, the 9-step workflow, output/quality rules, and per-paper-type presentation arcs).
-- A **dynamic layer** (this file plus `manifest.yaml`) that detects the paper type and loads only the fragments needed for the current job. Deep design, figure, and self-review material lives in on-demand references.
-
-Do not try to apply the deck-building logic from memory or from this router. Always load fragments from disk as described below.
-
 ## Routing protocol
 
-Follow these five steps every time the skill is invoked.
+For an edit to an existing deck, reuse its paper source, narrative, terminology, and assets.
+Change the requested slides and any affected cross-slide references; do not rerun paper intake
+or rebuild the deck's story unless the request requires it. Inspect changed slides and run the
+existing final PPTX audit before delivery. A requested outline or explanation alone does not
+require creating a deck.
+
+For a new task, load the core and matching resources below. Reuse already loaded guidance on follow-ups; load more only when the task needs it.
 
 ### 1. Load the manifest and the core layer
 
@@ -51,7 +50,7 @@ Apply the loaded fragments in this priority order:
 
 Build the Terminology Ledger (`../nature-shared/core/terminology-ledger.md`) while reading the source, so model names, gene/protein names, datasets, metrics, and abbreviations stay identical across every slide and speaker note.
 
-The end product is a real `.pptx` deck, not an outline or script. Do not fabricate results, numbers, or figure details.
+When a deck is requested, the end product is a real `.pptx`, not only an outline or script. Do not fabricate results, numbers, or figure details.
 
 ### 5. Reach for references only when needed
 
@@ -62,10 +61,3 @@ The files under `references/` are deep references, not defaults. Open them on de
 - running the self-review/corrective revision loop, severity grading, programmatic PPTX checks, rendered-preview policy, and final verification → `references/self-review.md`.
 
 When a real PPTX has been generated, run `scripts/audit_pptx_quality.py` unless the file is unavailable. Treat high-severity findings as blockers, revise the deck, then re-run the audit and record the final result in `output/qa_report.md`.
-
-## Why this split
-
-- The static layer is versioned and reviewable. Adding a new paper-type arc is one new fragment plus one manifest line.
-- The dynamic layer keeps each invocation cheap: only the arc for this paper enters context up front; heavy design and QA material loads only when that step runs.
-- The router itself is short on purpose. Update fragments, not this file, when adding scope.
-- This structure mirrors `nature-writing`, `nature-polishing`, and `nature-reader` so shared content lives in `nature-shared/`.

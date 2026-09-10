@@ -177,14 +177,9 @@ to be installed globally. List the skill names available in this repository:
 npx skills add Yuan1z0825/nature-skills --list
 ```
 
-Install every skill globally for Codex. The complete selection includes
-`nature-shared`, so skills that use the common references remain functional:
-
-```bash
-npx skills add Yuan1z0825/nature-skills --global --agent codex --skill '*' --yes --copy
-```
-
-Omit `--global` to install one independent skill in the current project:
+Start with the skills needed for the current task and include their shared dependencies.
+Omit `--global` for project-local installation; add it when the skill should be available
+across projects. For example:
 
 ```bash
 npx skills add Yuan1z0825/nature-skills --agent codex --skill nature-figure --yes --copy
@@ -198,7 +193,14 @@ npx skills add Yuan1z0825/nature-skills --global --agent codex \
   --skill nature-reader --skill nature-shared --yes --copy
 ```
 
-Install all skills for every agent supported by the CLI:
+If you need the complete collection, install every skill globally for Codex.
+This selection includes `nature-shared`:
+
+```bash
+npx skills add Yuan1z0825/nature-skills --global --agent codex --skill '*' --yes --copy
+```
+
+To install all skills for every agent supported by the CLI:
 
 ```bash
 npx skills add Yuan1z0825/nature-skills --all
@@ -365,9 +367,10 @@ The destination and check interval are both configurable:
 
 ### 5.3 Codex Installation
 
-Use the repository script to install or update Codex skills. It syncs every
+Use the repository script when installing or updating the complete skill collection. It syncs every
 top-level skill directory under `skills/` and verifies the copied contents with
-`diff`. It does not overwrite unrelated Codex skills.
+`diff`. It does not overwrite unrelated Codex skills. For a selected subset, use
+the `npx skills` installation above.
 
 ```bash
 git clone https://github.com/Yuan1z0825/nature-skills.git

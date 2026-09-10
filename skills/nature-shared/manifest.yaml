@@ -47,6 +47,6 @@ journal_formats:
 
 quality_tools:
   consistency_script: scripts/check_consistency.py
-  use_when: auditing an existing full manuscript or a manuscript revised over multiple rounds
+  use_when: auditing whole-manuscript consistency, or local discrepancies indicate wider drift; a new editing round alone does not require a full sweep
   purpose: warn about terminology variants, equivalent lengths expressed in different units, and equal numeric values reported at different precision
   script_resolution: resolve relative to the nature-shared package directory, never the user working directory

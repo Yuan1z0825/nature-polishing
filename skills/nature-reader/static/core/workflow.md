@@ -1,6 +1,6 @@
 # Reading workflow
 
-Run these six steps for any paper-reading job. Steps 1-2 build the source map, 3-5 produce the artifact, 6 covers follow-up questions.
+Use steps 1-5 when creating a reader. For source-linked questions, go directly to step 6 and inspect the relevant source blocks; do not rebuild the artifact. For an explicit excerpt request, scope extraction and translation to that excerpt.
 
 ## 1. Identify the source and paper type
 
@@ -72,4 +72,4 @@ Before delivery, run `scripts/validate_reader_math.py paper.md --source-map sour
 
 ## 6. Answer follow-up questions with source grounding
 
-When the user asks a question after the file is created, answer from the paper, not from memory, and cite exact block IDs and page numbers. For the full grounding rules, open `references/grounding-rules.md`.
+Answer questions from the relevant paper evidence. Reuse exact block IDs and page numbers from an existing reader; without one, cite verified source locations without inventing IDs. For the full grounding rules, open `references/grounding-rules.md`.

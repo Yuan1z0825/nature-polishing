@@ -11,7 +11,10 @@ Include source information:
 
 ## Output files
 
-Generate a minimal but complete output package by default.
+Generate a minimal but complete output package when creating a deck. For revisions, update the
+existing deck and QA record and retain unchanged assets; do not create a second package or
+re-extract the paper solely because the user requested a local slide edit. Respect an explicit
+request for an outline or explanation without starting deck generation.
 
 ### 1. `output/final_presentation_cn.pptx`
 The main deliverable: a complete Chinese PPTX deck with figures, captions, takeaways, source labels, and speaker notes.

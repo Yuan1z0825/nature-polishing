@@ -145,13 +145,7 @@
 npx skills add Yuan1z0825/nature-skills --list
 ```
 
-把全部技能全局安装到 Codex。`nature-shared` 会随全量安装一起加入，因此依赖共享参考资料的技能也能正常工作：
-
-```bash
-npx skills add Yuan1z0825/nature-skills --global --agent codex --skill '*' --yes --copy
-```
-
-只为当前项目安装一个独立技能时，省略 `--global`。例如：
+优先按当前任务选择需要的技能，并保留其共享依赖。只为当前项目安装时，省略 `--global`；需要跨项目使用时再加上它。例如：
 
 ```bash
 npx skills add Yuan1z0825/nature-skills --agent codex --skill nature-figure --yes --copy
@@ -164,7 +158,13 @@ npx skills add Yuan1z0825/nature-skills --global --agent codex \
   --skill nature-reader --skill nature-shared --yes --copy
 ```
 
-也可以把全部技能安装到 CLI 支持的所有 agent：
+如果确实需要完整技能集，也可以全局安装到 Codex。全量选择包含 `nature-shared`：
+
+```bash
+npx skills add Yuan1z0825/nature-skills --global --agent codex --skill '*' --yes --copy
+```
+
+需要把全部技能安装到 CLI 支持的所有 agent 时，使用：
 
 ```bash
 npx skills add Yuan1z0825/nature-skills --all
@@ -307,7 +307,7 @@ git clone https://github.com/Yuan1z0825/nature-skills.git ~/ai-skills/nature-ski
 
 ### 5.3 Codex 安装方式
 
-推荐使用仓库自带脚本安装或更新 Codex skills。脚本会同步 `skills/` 下所有顶层技能目录，并在复制后做 `diff` 验证；它不会覆盖其他无关 Codex skills。
+需要安装或更新完整技能集时，可以使用仓库自带脚本。脚本会同步 `skills/` 下所有顶层技能目录，并在复制后做 `diff` 验证；它不会覆盖其他无关 Codex skills。只需要部分技能时，使用上面的 `npx skills` 按需安装方式。
 
 ```bash
 git clone https://github.com/Yuan1z0825/nature-skills.git

@@ -58,7 +58,7 @@ Decision types:
 - `revise-and-resubmit`
 - `transfer after review`
 - `appeal-like case` routed outside the default workflow
-- `unclear` only as an intake state; ask the user before normal response strategy or prose drafting
+- `unclear` when not supplied; ask before decision-dependent package strategy or complete-package drafting, but continue local edits, visible-draft audits, and comment-level triage
 
 Task modes:
 

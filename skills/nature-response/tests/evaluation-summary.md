@@ -10,7 +10,7 @@ Recommended status: `Beta`.
 Rationale:
 
 - The core rules are defined in `SKILL.md` and modular references.
-- The skill has synthetic fixtures covering mandatory decision-type intake, minor revision, major
+- The skill has synthetic fixtures covering package-level decision-type intake, local edits without a decision label, minor revision, major
   revision with missing evidence, impossible experiment, defensive draft audit, conflicting
   reviewers, mutually blind reviewer-response separation, and per-task status tracking.
 - Each fixture includes expected behavior, forbidden behavior, and pass/fail criteria.
@@ -21,7 +21,8 @@ Rationale:
 
 | Fixture | Coverage | Key failure prevented |
 |---|---|---|
-| `unclear-decision-type.md` | mandatory Major/Minor intake gate | guessing the revision type or drafting with the wrong package strategy |
+| `unclear-decision-type.md` | package-level Major/Minor intake gate | guessing the revision type or drafting with the wrong package strategy |
+| `local-edit-without-decision.md` | local wording edits and bounded triage | blocking an independent edit or expanding it into a full package |
 | `minor-revision.md` | stable IDs, minor comments, missing citation metadata | fabricated citation or line numbers |
 | `major-revision-missing-evidence.md` | validation request, statistical details, missing evidence | invented results or p-values |
 | `impossible-experiment.md` | out-of-scope longitudinal evidence | time/funding excuse or fabricated survival data |

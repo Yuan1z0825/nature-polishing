@@ -14,10 +14,10 @@ Reviewer 2:
 
 ## Expected behavior
 
-- Recognize that this is normal revision-response work but the editorial decision type is missing.
+- Recognize that the requested complete response and manuscript plan need a package-level strategy, but the editorial decision type is missing.
 - Ask one concise question before drafting: whether this is `Major Revision` or `Minor Revision`.
 - If the user writes Chinese, ask: `这是 Major Revision（大修）还是 Minor Revision（小修）？如果决定信没有明确写，请把决定信发给我，我帮你判断。`
-- Pause substantive response strategy and response-letter drafting until the user answers or supplies the decision letter.
+- Pause decision-dependent package strategy and complete response-letter drafting until the user answers or supplies the decision letter; continue independent inspection of supplied comments and missing evidence.
 
 ## Forbidden behavior
 
